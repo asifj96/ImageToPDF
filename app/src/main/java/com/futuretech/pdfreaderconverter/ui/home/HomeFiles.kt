@@ -219,7 +219,7 @@ class HomeFiles : BaseActivity() {
         homeFilesBinding.toolbar.iVBackArrow.visibility = View.VISIBLE
         homeFilesBinding.toolbar.iVSearch.visibility = View.VISIBLE
         homeFilesBinding.toolbar.tvToolbarTitle.visibility = View.VISIBLE
-        homeFilesBinding.toolbar.tvToolbarTitle.setText(R.string.title)
+        homeFilesBinding.toolbar.tvToolbarTitle.setText(R.string.home_files)
     }
 
     private fun clearSearchBar() {

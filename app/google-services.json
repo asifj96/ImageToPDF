@@ -1,33 +1,107 @@
 {
   "project_info": {
-    "project_number": "904423646648",
-    "project_id": "imagetopdf-e6f4e",
-    "storage_bucket": "imagetopdf-e6f4e.appspot.com"
+    "project_number": "1037083751645",
+    "project_id": "able-involution-251108",
+    "storage_bucket": "able-involution-251108.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:904423646648:android:2ce2e9e83a359dd552db4d",
+        "mobilesdk_app_id": "1:1037083751645:android:7c8455abd70d4a7cc71734",
         "android_client_info": {
-          "package_name": "com.futuretech.imagetopdf"
+          "package_name": "com.arindam.camerax"
         }
       },
       "oauth_client": [
         {
-          "client_id": "904423646648-rbdpmn6om5g7c2hm3o3dk9c78q21u50a.apps.googleusercontent.com",
+          "client_id": "1037083751645-3386qv3mhl6tv303t23uorj23dn0js9a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arindam.camerax",
+            "certificate_hash": "ffc8e77d6300e31592b0ff4603ffb64e497decd0"
+          }
+        },
+        {
+          "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBjk0sn3ZsyxdSFBc6Aa8SrkDsByp884g4"
+          "current_key": "AIzaSyDv9br-nKowJi0ZMq4b3Ge8fippNlYsuRQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "904423646648-rbdpmn6om5g7c2hm3o3dk9c78q21u50a.apps.googleusercontent.com",
+              "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037083751645:android:a6a174a49ef4f479c71734",
+        "android_client_info": {
+          "package_name": "com.best.surrogift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037083751645-ilb6rbjch2cmudb8da7hjvaue4qb5fkk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.best.surrogift",
+            "certificate_hash": "e03a03bad7973048eaff88216a8fb18ced4807a0"
+          }
+        },
+        {
+          "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv9br-nKowJi0ZMq4b3Ge8fippNlYsuRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037083751645:android:cb2f92f418affb08c71734",
+        "android_client_info": {
+          "package_name": "com.futuretech.pdfreaderconverter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv9br-nKowJi0ZMq4b3Ge8fippNlYsuRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037083751645-qva6dm2790lq0585opgib4842aob0fsi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

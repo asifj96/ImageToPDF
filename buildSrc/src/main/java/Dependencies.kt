@@ -2,8 +2,8 @@ object Versions {
     const val minSdk = 21
     const val compileSdk = 31
     const val targetSdk = 31
-    const val versionCode = 1
-    const val versionName = "1.0"
+    const val versionCode = 2
+    const val versionName = "1.1"
     const val coreKtx = "1.7.0"
     const val appCompat = "1.4.1"
     const val materialDesign = "1.5.0"
@@ -25,8 +25,6 @@ object Versions {
     const val preferenceKts = "1.2.0"
     const val recyclerView = "1.2.1"
     const val lottieAnim = "4.1.0"
-    const val billing = "3.0.3"
-    const val playCore = "1.10.2"
     const val adsLite = "20.5.0"
     const val shimmer = "0.5.0@aar"
     const val lifecycle = "2.4.1"
@@ -61,8 +59,6 @@ object Android {
     const val ssp = "com.intuit.ssp:ssp-android:${Versions.dimension}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
     const val lottieAnim = "com.airbnb.android:lottie:${Versions.lottieAnim}"
-    const val billing = "com.android.billingclient:billing:${Versions.billing}"
-    const val playCore = "com.google.android.play:core:${Versions.playCore}"
     const val adsLite = "com.google.android.gms:play-services-ads-lite:${Versions.adsLite}"
     const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmer}"
     const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"

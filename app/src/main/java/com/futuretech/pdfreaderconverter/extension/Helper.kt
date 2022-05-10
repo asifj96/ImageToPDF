@@ -12,7 +12,10 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Matrix
 import android.net.Uri
-import android.os.*
+import android.os.Build
+import android.os.Handler
+import android.os.Looper
+import android.os.SystemClock
 import android.text.Editable
 import android.text.format.DateFormat
 import android.util.Log
@@ -52,12 +55,6 @@ fun Context.getRootItemArrayList(): ArrayList<RootItem> {
     )
     rootItemArrayList.add(
         RootItem(
-            R.drawable.ic_pdf_icon,
-            getString(R.string.pdf_files)
-        )
-    )
-    rootItemArrayList.add(
-        RootItem(
             R.drawable.ic_import_from_camera,
             getString(R.string.import_from_camera)
         )
@@ -66,6 +63,12 @@ fun Context.getRootItemArrayList(): ArrayList<RootItem> {
         RootItem(
             R.drawable.ic_import_from_gallery,
             getString(R.string.import_from_gallery)
+        )
+    )
+    rootItemArrayList.add(
+        RootItem(
+            R.drawable.ic_share_icon,
+            getString(R.string.share_app)
         )
     )
     return rootItemArrayList
@@ -96,6 +99,7 @@ fun Context.shareApp() {
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.action = Intent.ACTION_SEND
         shareIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Image To PDF")
         shareIntent.putExtra(
             Intent.EXTRA_TEXT,
             "${getString(R.string.share_app_text)}$packageName"
@@ -233,6 +237,7 @@ fun createFile(baseFolder: File) = File(
         Locale.US
     ).format(System.currentTimeMillis()) + PHOTO_EXTENSION
 )
+
 fun createPdfFile(baseFolder: File, format: String, extension: String) = File(
     baseFolder,
     format + extension
@@ -413,12 +418,8 @@ fun Context.hasCameraPermission(): Boolean {
 }
 
 fun Context.hasStoragePermission(): Boolean =
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-        Environment.isExternalStorageManager()
-    } else {
-        EasyPermissions.hasPermissions(
-            this,
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        )
-    }
+    EasyPermissions.hasPermissions(
+        this,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )

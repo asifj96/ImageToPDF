@@ -20,19 +20,6 @@
         android:id="@+id/rootFragment"
         android:name="com.futuretech.pdfreaderconverter.ui.root.RootFragment"
         android:label="fragment_root"
-        tools:layout="@layout/fragment_root">
-        <action
-            android:id="@+id/action_rootFragment_to_pdfFilesFragment"
-            app:destination="@id/pdfFilesFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/pdfFilesFragment"
-        android:name="com.futuretech.pdfreaderconverter.ui.pdfFiles.PdfFilesFragment"
-        android:label="fragment_pdf_files"
-        tools:layout="@layout/fragment_pdf_files">
-        <action
-            android:id="@+id/action_pdfFilesFragment_to_rootFragment"
-            app:destination="@id/rootFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_root"/>
 
 </navigation>

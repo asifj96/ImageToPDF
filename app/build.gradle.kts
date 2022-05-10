@@ -14,8 +14,8 @@ android {
     compileSdk = Versions.compileSdk
 
     defaultConfig {
-//        applicationId = "com.futuretech.pdfreaderconverter"
-        applicationId = "com.futuretech.imagetopdf"
+        applicationId = "com.futuretech.pdfreaderconverter" // debug
+//        applicationId = "com.futuretech.imagetopdf"  // release
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
         versionCode = Versions.versionCode
@@ -79,9 +79,7 @@ dependencies {
     testImplementation(Android.junit)
     androidTestImplementation(Android.junitTest)
     androidTestImplementation(Android.espressoCore)
-//    api(Android.adsLite)
-    implementation(Android.billing)
-    implementation(Android.playCore)
+    api(Android.adsLite)
     implementation(Android.shimmer)
 
     implementation(Gson.gson)

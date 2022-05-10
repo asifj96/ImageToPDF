@@ -104,15 +104,11 @@ open class BaseFragment() : Fragment() {
     }
 
     fun Context.hasStoragePermission(): Boolean =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            Environment.isExternalStorageManager()
-        } else {
-            EasyPermissions.hasPermissions(
-                this,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            )
-        }
+        EasyPermissions.hasPermissions(
+            this,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
 
     fun getRatinaleDisplayStatus(context: Context, permission: String?): Boolean {
         val genPrefs: SharedPreferences =

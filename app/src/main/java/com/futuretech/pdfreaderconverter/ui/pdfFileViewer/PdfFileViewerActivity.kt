@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import com.futuretech.pdfreaderconverter.R
 import com.futuretech.pdfreaderconverter.databinding.ActivityPdfFileViewerBinding
 import com.futuretech.pdfreaderconverter.dialog.PdfPasswordDialog
@@ -13,7 +12,6 @@ import com.futuretech.pdfreaderconverter.extension.showToast
 import com.futuretech.pdfreaderconverter.model.FileModel
 import com.futuretech.pdfreaderconverter.model.PdfFile
 import com.futuretech.pdfreaderconverter.ui.base.BaseActivity
-import com.futuretech.pdfreaderconverter.ui.pdfFiles.PdfFilesViewModel
 import com.futuretech.pdfreaderconverter.utility.Constants.FILE_MODEL_OBJ
 import com.futuretech.pdfreaderconverter.utility.Constants.FILE_PATH
 import com.futuretech.pdfreaderconverter.utility.Constants.FILE_URI
@@ -45,7 +43,6 @@ class PdfFileViewerActivity : BaseActivity(), OnPageChangeListener, OnPageErrorL
     private var isSwipe: Boolean? = false
     private var isNightMode: Boolean? = false
     var currentPage: Int = 0
-    private val pdfFilesViewModel: PdfFilesViewModel by viewModels()
     private lateinit var outputDirectory: File
     private lateinit var fileModelObj: FileModel
     private lateinit var fileObj: Any
@@ -106,7 +103,6 @@ class PdfFileViewerActivity : BaseActivity(), OnPageChangeListener, OnPageErrorL
 
         }
     }
-
 
 
     private fun getPdfFileObj(): PdfFile? {

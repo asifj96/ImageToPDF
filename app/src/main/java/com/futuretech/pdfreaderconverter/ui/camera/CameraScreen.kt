@@ -373,35 +373,10 @@ class CameraScreen : BaseCamera(), EasyPermissions.PermissionCallbacks,
         }
         cameraBinding.cLImportFromGallery.setOnClickListener { view ->
             if (disableClick()) {
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    if (Environment.isExternalStorageManager()) {
-                        startGalleryScreen()
-
-                    } else {
-                        try {
-                            val intent =
-                                Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                            intent.addCategory("android.intent.category.DEFAULT")
-                            intent.data = Uri.parse(
-                                String.format(
-                                    "package:%s",
-                                    packageName
-                                )
-                            )
-                            startActivity(intent)
-                        } catch (e: java.lang.Exception) {
-                            val intent = Intent()
-                            intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-                            startActivity(intent)
-                        }
-                    }
+                if (!hasStoragePermission()) {
+                    requestGalleryPermission()
                 } else {
-                    if (!hasStoragePermission()) {
-                        requestGalleryPermission()
-                    } else {
-                        startGalleryScreen()
-                    }
+                    startGalleryScreen()
                 }
             }
         }
@@ -409,7 +384,6 @@ class CameraScreen : BaseCamera(), EasyPermissions.PermissionCallbacks,
 
     private fun startGalleryScreen() {
         val intent = Intent(this, GalleryScreen::class.java)
-        //startActivity(intent)
         galleryLauncher.launch(intent)
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }

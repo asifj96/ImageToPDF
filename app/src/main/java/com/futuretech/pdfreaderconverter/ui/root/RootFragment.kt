@@ -4,10 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Rect
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -74,7 +71,7 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
     private fun setToolbar() {
         mBinding.toolbar.tvToolbarTitle.visibility = View.VISIBLE
         mBinding.toolbar.iVDropDown.visibility = View.VISIBLE
-        mBinding.toolbar.tvToolbarTitle.text = getString(R.string.title)
+        mBinding.toolbar.tvToolbarTitle.text = getString(R.string.app_title)
     }
 
     private fun setRootItemAdapter() {
@@ -88,6 +85,9 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
             requireContext(), 2, RecyclerView.VERTICAL,
             false
         )
+        mBinding.rvRootItemList.layoutManager = gridLayoutManager
+        mBinding.rvRootItemList.itemAnimator = DefaultItemAnimator()
+        mBinding.rvRootItemList.adapter = rootItemAdapter
         val spacing = resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._6sdp) / 2
         mBinding.rvRootItemList.apply {
             setHasFixedSize(true)
@@ -103,9 +103,6 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
             })
             layoutManager = GridLayoutManager(context, 2)
         }
-        mBinding.rvRootItemList.layoutManager = gridLayoutManager
-        mBinding.rvRootItemList.itemAnimator = DefaultItemAnimator()
-        mBinding.rvRootItemList.adapter = rootItemAdapter
     }
 
     private fun handleClick(itemPos: Int) {
@@ -113,82 +110,30 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
         when (itemPos) {
 
             0 -> {
-//                navigate(R.id.action_rootFragment_to_homeFilesFragment)
                 startHomeScreen()
             }
             1 -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    if (Environment.isExternalStorageManager()) {
-                        navigate(R.id.action_rootFragment_to_pdfFilesFragment)
-                    } else {
-                        try {
-                            val intent =
-                                Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                            intent.addCategory("android.intent.category.DEFAULT")
-                            intent.data = Uri.parse(
-                                String.format(
-                                    "package:%s",
-                                    requireContext().applicationContext.packageName
-                                )
-                            )
-                            startActivity(intent)
-                        } catch (e: java.lang.Exception) {
-                            val intent = Intent()
-                            intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-                            startActivity(intent)
-                        }
-                    }
-                } else {
-                    if (!requireContext().hasStoragePermission()) {
-                        requestPermission()
-                    } else {
-                        navigate(R.id.action_rootFragment_to_pdfFilesFragment)
-                    }
-                }
-            }
-            2 -> {
                 if (requireContext().hasStoragePermission()) {
                     startCameraScreen()
                 } else {
                     requestPermission()
                 }
             }
-            3 -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    if (Environment.isExternalStorageManager()) {
-                        startGalleryScreen()
-                    } else {
-                        try {
-                            val intent =
-                                Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                            intent.addCategory("android.intent.category.DEFAULT")
-                            intent.data = Uri.parse(
-                                String.format(
-                                    "package:%s",
-                                    requireContext().applicationContext.packageName
-                                )
-                            )
-                            startActivity(intent)
-                        } catch (e: java.lang.Exception) {
-                            val intent = Intent()
-                            intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-                            startActivity(intent)
-                        }
-                    }
+            2 -> {
+                if (!requireContext().hasStoragePermission()) {
+                    requestPermission()
                 } else {
-                    if (!requireContext().hasStoragePermission()) {
-                        requestPermission()
-                    } else {
-                        startGalleryScreen()
-                    }
+                    startGalleryScreen()
                 }
+            }
+            3 -> {
+                requireContext().shareApp()
             }
         }
     }
 
     private fun startGalleryScreen() {
         val intent = Intent(requireContext(), GalleryScreen::class.java)
-//        startActivity(intent)
         galleryLauncher.launch(intent)
         requireActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
@@ -294,30 +239,4 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
             imageQueueViewModel.deleteAllQueueImages()
         }
     }
-    /*  private fun checkPermission() {
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-              if (Environment.isExternalStorageManager()) {
-                  navigate(R.id.action_permissionFragment_to_homeFragment)
-              } else {
-                  try {
-                      val intent =
-                          Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                      intent.addCategory("android.intent.category.DEFAULT")
-                      intent.data = Uri.parse(String.format("package:%s",
-                          requireContext().packageName))
-                      startActivity(intent)
-                  } catch (e: Exception) {
-                      val intent = Intent()
-                      intent.action = Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION
-                      startActivity(intent)
-                  }
-              }
-          } else {
-              if (!requireContext().hasStoragePermission()) {
-                  requestPermission()
-              } else {
-                  navigate(R.id.action_permissionFragment_to_homeFragment)
-              }
-          }
-      }*/
 }
