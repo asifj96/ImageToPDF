@@ -11,6 +11,7 @@
     <string name="import_from_gallery">Import from Gallery</string>
     <string name="feedback_email">futuretech582@gmail.com</string>
     <string name="share_app">Share</string>
+    <string name="ad_attribution" translatable="false">AD</string>
     <string name="rate_us_app">Rate Us</string>
     <string name="give_feedback">Feedback</string>
     <string name="privacy_policy">Privacy Policy</string>

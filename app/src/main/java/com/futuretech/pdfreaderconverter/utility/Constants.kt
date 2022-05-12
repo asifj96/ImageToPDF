@@ -1,5 +1,7 @@
 package com.futuretech.pdfreaderconverter.utility
 
+import com.google.android.gms.ads.nativead.NativeAd
+
 object Constants {
 
     val STORAGE_PERMISSION: Array<String> = arrayOf(
@@ -53,4 +55,7 @@ object Constants {
     const val COLOR_BLUE = "COLOR_BLUE"
     const val COLOR_GREEN = "COLOR_GREEN"
     const val COLOR_PURPLE = "COLOR_PURPLE"
+
+    var mainFullNativeAd: NativeAd? = null
+
 }

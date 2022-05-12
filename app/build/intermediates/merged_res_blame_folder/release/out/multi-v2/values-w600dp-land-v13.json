@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\hp\\AndroidProject\\ImageToPDF\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\transforms-3\\b3d6cae90491be5a6b1c3004c46403a2\\transformed\\material-1.5.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+                    "source": "C:\\Users\\hp\\.gradle\\caches\\transforms-3\\0a40a8f00c5cfdbc97bead1851bbee19\\transformed\\material-1.5.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

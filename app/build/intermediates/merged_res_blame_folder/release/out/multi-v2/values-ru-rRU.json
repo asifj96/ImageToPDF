@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\hp\\AndroidProject\\ImageToPDF\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ru-rRU\\values-ru-rRU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\transforms-3\\4355ff924e63840d3daae0d54f53c376\\transformed\\jetified-android-image-cropper-2.8.0\\res\\values-ru-rRU\\values-ru-rRU.xml",
+                    "source": "C:\\Users\\hp\\.gradle\\caches\\transforms-3\\c47de38a6202b1697dc478a0984b6a8d\\transformed\\jetified-android-image-cropper-2.8.0\\res\\values-ru-rRU\\values-ru-rRU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

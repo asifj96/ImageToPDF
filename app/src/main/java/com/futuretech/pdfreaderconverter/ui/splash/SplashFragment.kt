@@ -27,7 +27,7 @@ class SplashFragment : BaseFragment() {
     private fun startHandler() {
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.action_splashFragment_to_rootFragment)
-        }, 2000)
+        }, 3000)
     }
 
     override fun onResume() {

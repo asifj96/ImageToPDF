@@ -16,20 +16,50 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mCvNativeAd"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <FrameLayout
+                android:id="@+id/adViewNoPermission_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayoutNative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:background="@color/colorLightGrey">
+
+                <include layout="@layout/placeholder_flexiable_native_ad" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvRootItemList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginVertical="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_3sdp"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintTop_toBottomOf="@id/mCvNativeAd"
             tools:listitem="@layout/layout_root_item" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

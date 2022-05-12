@@ -1,0 +1,4 @@
+#Wed May 11 01:18:02 PDT 2022
+base.0=C\:\\Users\\hp\\AndroidProject\\ImageToPDF\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

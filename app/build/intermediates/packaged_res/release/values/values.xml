@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="colorBlue">#0085FF</color>
     <color name="colorGreen">#05BA17</color>
+    <color name="colorLightGrey">#ECECEC</color>
     <color name="colorOnBackground">#1AA9431E</color>
     <color name="colorPrimary">#A9431E</color>
     <color name="colorPrimaryText">#FFFFFF</color>
@@ -17,7 +18,9 @@
     <color name="white">#FFFFFFFF</color>
     <string name="_13_aug_21_9_36">_13_aug_21_9_36</string>
     <string name="_1_11_mb">_1_11_mb</string>
+    <string name="ad_attribution" translatable="false">AD</string>
     <string name="alert">Alert</string>
+    <string name="appID" translatable="false">ca-app-pub-5022645414174976~9665991434</string>
     <string name="app_name">PdfReaderConverter</string>
     <string name="app_title">Image to Pdf</string>
     <string name="apply">Apply</string>
@@ -25,7 +28,7 @@
     <string name="batch_mode_enable">Batch mode enable</string>
     <string name="cancel" ns1:ignore="ButtonCase">CANCEL</string>
     <string name="click_back_again_to_exit">Click BACK again to exit</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">1c1a3af251cb487f8959474540fb1e7e</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">9d7388939a374af98fa715257164f43d</string>
     <string name="crop">Crop</string>
     <string name="default_web_client_id" translatable="false">904423646648-rbdpmn6om5g7c2hm3o3dk9c78q21u50a.apps.googleusercontent.com</string>
     <string name="delete">Delete</string>
@@ -57,6 +60,7 @@
     <string name="import_text">Import</string>
     <string name="incorrect_password">Incorrect_password</string>
     <string name="low">Low</string>
+    <string name="main_native" translatable="false">ca-app-pub-5022645414174976/7969766387</string>
     <string name="max">Max</string>
     <string name="medium">Medium</string>
     <string name="nothing_found">No Item</string>

@@ -91,6 +91,14 @@
                 android:resource="@xml/path"
                 tools:replace="android:resource" />
         </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/appID" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
+
     </application>
 
 </manifest>

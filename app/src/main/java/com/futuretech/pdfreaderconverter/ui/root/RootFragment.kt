@@ -20,6 +20,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.futuretech.pdfreaderconverter.R
 import com.futuretech.pdfreaderconverter.adapter.RootItemAdapter
+import com.futuretech.pdfreaderconverter.ads.loadNativeAd
+import com.futuretech.pdfreaderconverter.ads.loadPreloadedAd
 import com.futuretech.pdfreaderconverter.databinding.FragmentRootBinding
 import com.futuretech.pdfreaderconverter.extension.*
 import com.futuretech.pdfreaderconverter.model.ImageQueue
@@ -31,9 +33,11 @@ import com.futuretech.pdfreaderconverter.ui.home.HomeFiles
 import com.futuretech.pdfreaderconverter.utility.Constants.GALLERY_IMAGE
 import com.futuretech.pdfreaderconverter.utility.Constants.GALLERY_PICKER_RESULT
 import com.futuretech.pdfreaderconverter.utility.Constants.IMAGE_QUEUE_LIST
+import com.futuretech.pdfreaderconverter.utility.Constants.mainFullNativeAd
 import com.futuretech.pdfreaderconverter.utility.FileOperation.getOutputFileDirectory
 import com.futuretech.pdfreaderconverter.utility.FileOperation.getRealPathFromURI
 import com.futuretech.pdfreaderconverter.utility.Logger
+import kotlinx.android.synthetic.main.fragment_root.*
 import kotlinx.coroutines.launch
 import java.io.File
 
@@ -59,6 +63,13 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
         setToolbar()
         setListener()
         setRootItemAdapter()
+
+        if (requireActivity().isNetworkAvailable()) {
+            mBinding.mCvNativeAd.visibility = View.VISIBLE
+            loadMainFullNative()
+        } else {
+            mBinding.mCvNativeAd.visibility = View.GONE
+        }
     }
 
     private fun setListener() {
@@ -88,7 +99,7 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
         mBinding.rvRootItemList.layoutManager = gridLayoutManager
         mBinding.rvRootItemList.itemAnimator = DefaultItemAnimator()
         mBinding.rvRootItemList.adapter = rootItemAdapter
-        val spacing = resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._6sdp) / 2
+        val spacing = resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._6sdp) / 3
         mBinding.rvRootItemList.apply {
             setHasFixedSize(true)
             addItemDecoration(object : RecyclerView.ItemDecoration() {
@@ -239,4 +250,30 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
             imageQueueViewModel.deleteAllQueueImages()
         }
     }
+
+    private fun loadMainFullNative() {
+
+        if (mainFullNativeAd == null) {
+
+            requireActivity().loadNativeAd(
+                adViewNoPermission_one,
+                R.layout.full_native_flexible_ad,
+                getString(R.string.main_native),
+                shimmerLayoutNative,
+                mCvNativeAd
+            ) {
+                mainFullNativeAd = it
+                Logger.debug("Main_Full_Native::=>", mainFullNativeAd.toString())
+            }
+        } else {
+            requireActivity().loadPreloadedAd(
+                adViewNoPermission_one,
+                R.layout.full_native_flexible_ad,
+                mainFullNativeAd!!,
+                shimmerLayoutNative,
+                mCvNativeAd
+            )
+        }
+    }
+
 }

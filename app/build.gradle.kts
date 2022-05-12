@@ -31,13 +31,16 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")
+            resValue("string", "appID", "ca-app-pub-5022645414174976~9665991434")
+            resValue("string", "main_native", "ca-app-pub-5022645414174976/7969766387")
         }
         getByName("debug") {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")
-//            resValue("string", "appID", "ca-app-pub-3940256099942544~3347511713")
+            resValue("string", "appID", "ca-app-pub-3940256099942544~3347511713")
+            resValue("string", "main_native", "ca-app-pub-3940256099942544/2247696110")
         }
     }
     compileOptions {
@@ -132,9 +135,6 @@ dependencies {
 
     // Cropping
     implementation ("com.theartofdev.edmodo:android-image-cropper:2.8.0")
-    //signature view
-    implementation ("com.github.gcacace:signature-pad:1.3.1")
-
     // Itext5
     implementation ("com.itextpdf:itextg:5.5.10")
 

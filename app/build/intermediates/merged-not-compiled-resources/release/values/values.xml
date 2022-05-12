@@ -627,6 +627,7 @@
     <color name="colorAccent">#ff80cbc4</color>
     <color name="colorBlue">#0085FF</color>
     <color name="colorGreen">#05BA17</color>
+    <color name="colorLightGrey">#ECECEC</color>
     <color name="colorOnBackground">#1AA9431E</color>
     <color name="colorPrimary">#A9431E</color>
     <color name="colorPrimaryDark">@android:color/black</color>
@@ -2421,8 +2422,10 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="ad_attribution" translatable="false">AD</string>
     <string name="alert">Alert</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
+    <string name="appID" translatable="false">ca-app-pub-5022645414174976~9665991434</string>
     <string name="app_name">PdfReaderConverter</string>
     <string name="app_title">Image to Pdf</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
@@ -2438,7 +2441,7 @@
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="click_back_again_to_exit">Click BACK again to exit</string>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">1c1a3af251cb487f8959474540fb1e7e</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">9d7388939a374af98fa715257164f43d</string>
     <string name="common_google_play_services_unknown_issue"><ns2:g id="app_name">%1$s</ns2:g> is having trouble with Google Play services. Please try again.</string>
     <string name="copy">Copy</string>
     <string name="crop">Crop</string>
@@ -2513,6 +2516,7 @@
     <string name="m3_sys_typescale_title_large_font" translatable="false">sans-serif</string>
     <string name="m3_sys_typescale_title_medium_font" translatable="false">sans-serif-medium</string>
     <string name="m3_sys_typescale_title_small_font" translatable="false">sans-serif-medium</string>
+    <string name="main_native" translatable="false">ca-app-pub-5022645414174976/7969766387</string>
     <string name="material_clock_display_divider" translatable="false">:</string>
     <string description="Description for the toggle to choose between AM and PM [CHAR_LIMIT=NONE] " name="material_clock_toggle_content_description">Select AM or PM</string>
     <string description="Description for button to switch to select the hour [CHAR_LIMIT=NONE]" name="material_hour_selection">Select hour</string>
@@ -6847,6 +6851,14 @@
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>
+    <style name="Theme.IAPTheme" parent="android:Theme">
+<item name="android:windowIsTranslucent">true</item>
+<item name="android:windowBackground">@android:color/transparent</item>
+<item name="android:windowContentOverlay">@null</item>
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowIsFloating">true</item>
+<item name="android:backgroundDimEnabled">false</item>
+</style>
     <style name="Theme.Material3.Dark" parent="Base.Theme.Material3.Dark"/>
     <style name="Theme.Material3.Dark.BottomSheetDialog" parent="Base.Theme.Material3.Dark.BottomSheetDialog"/>
     <style name="Theme.Material3.Dark.Dialog" parent="Base.Theme.Material3.Dark.Dialog"/>
@@ -6997,14 +7009,6 @@
         <item name="android:forceDarkAllowed" ns1:targetApi="q">false</item>
 
     </style>
-    <style name="Theme.PlayCore.Transparent" parent="android:Theme">
-<item name="android:windowIsTranslucent">true</item>
-<item name="android:windowBackground">@android:color/transparent</item>
-<item name="android:windowContentOverlay">@null</item>
-<item name="android:windowNoTitle">true</item>
-<item name="android:windowIsFloating">true</item>
-<item name="android:backgroundDimEnabled">false</item>
-</style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
@@ -9328,6 +9332,13 @@
         <!-- Whether the activity should always be expanded on launch. -->
         <attr format="boolean" name="alwaysExpand"/>
     </declare-styleable>
+    <declare-styleable name="AdsAttrs">
+<attr format="string" name="adSize"/>
+
+<attr format="string" name="adSizes"/>
+
+<attr format="string" name="adUnitId"/>
+</declare-styleable>
     <declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
@@ -13308,13 +13319,6 @@
     </attr>
     <attr format="float" name="shimmer_tilt"/>
   </declare-styleable>
-    <declare-styleable name="SignaturePad">
-        <attr format="dimension" name="penMinWidth"/>
-        <attr format="dimension" name="penMaxWidth"/>
-        <attr format="color" name="penColor"/>
-        <attr format="float" name="velocityFilterWeight"/>
-        <attr format="boolean" name="clearOnDoubleClick"/>
-    </declare-styleable>
     <declare-styleable name="Slider">
     <attr name="android:value"/>
     <attr name="android:valueFrom"/>
