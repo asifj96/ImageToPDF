@@ -31,8 +31,8 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")
-            resValue("string", "appID", "ca-app-pub-5022645414174976~9665991434")
-            resValue("string", "main_native", "ca-app-pub-5022645414174976/7969766387")
+            resValue("string", "appID", "ca-app-pub-5477431624667427~2376739917")
+            resValue("string", "main_native", "ca-app-pub-5477431624667427/4438676912")
         }
         getByName("debug") {
             isMinifyEnabled = true
