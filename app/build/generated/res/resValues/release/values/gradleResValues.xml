@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Value from build type: release -->
+    <string name="appID" translatable="false">ca-app-pub-5477431624667427~8527672147</string>
+    <!-- Value from build type: release -->
+    <string name="main_native" translatable="false">ca-app-pub-5477431624667427/5794579477</string>
+
+</resources>

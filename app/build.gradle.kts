@@ -31,8 +31,8 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")
-            resValue("string", "appID", "ca-app-pub-5477431624667427~2376739917")
-            resValue("string", "main_native", "ca-app-pub-5477431624667427/4438676912")
+            resValue("string", "appID", "ca-app-pub-5477431624667427~8527672147")
+            resValue("string", "main_native", "ca-app-pub-5477431624667427/5794579477")
         }
         getByName("debug") {
             isMinifyEnabled = true
@@ -138,7 +138,9 @@ dependencies {
     // Itext5
     implementation ("com.itextpdf:itextg:5.5.10")
 
-
+    // kOIN
+    implementation("io.insert-koin:koin-core:3.1.2")
+    implementation("io.insert-koin:koin-android:3.1.2")
 
 }
 kapt {

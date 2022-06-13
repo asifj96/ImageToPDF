@@ -9,8 +9,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.futuretech.pdfreaderconverter.R
+import com.futuretech.pdfreaderconverter.ads.loadNativeAd
 import com.futuretech.pdfreaderconverter.databinding.FragmentSplashBinding
+import com.futuretech.pdfreaderconverter.extension.isNetworkAvailable
 import com.futuretech.pdfreaderconverter.ui.base.BaseFragment
+import com.futuretech.pdfreaderconverter.utility.Constants.mainFullNativeAd
+import com.futuretech.pdfreaderconverter.utility.Logger
+import kotlinx.android.synthetic.main.fragment_root.*
 
 class SplashFragment : BaseFragment() {
 

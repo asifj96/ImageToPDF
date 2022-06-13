@@ -7,20 +7,22 @@ import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import android.os.Environment
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.futuretech.pdfreaderconverter.data.viewmodel.ImageQueueViewModel
+import com.futuretech.pdfreaderconverter.remote.RemoteConfigViewModel
 import com.futuretech.pdfreaderconverter.utility.Constants
 import com.futuretech.pdfreaderconverter.utility.Logger
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import pub.devrel.easypermissions.EasyPermissions
 
 open class BaseFragment() : Fragment() {
 
     val imageQueueViewModel: ImageQueueViewModel by viewModels()
+    val remoteViewModel: RemoteConfigViewModel by viewModel()
 
     fun navigate(actionId: Int) {
         findNavController().navigate(actionId)
@@ -43,16 +45,20 @@ open class BaseFragment() : Fragment() {
 
         alertDialogBuilder.setTitle("Permission needed")
         alertDialogBuilder.setMessage("Storage permission needed")
-        alertDialogBuilder.setPositiveButton("Open Setting"
+        alertDialogBuilder.setPositiveButton(
+            "Open Setting"
         ) { _, _ ->
             val intent = Intent()
             intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-            val uri = Uri.fromParts("package", requireContext().packageName,
-                null)
+            val uri = Uri.fromParts(
+                "package", requireContext().packageName,
+                null
+            )
             intent.data = uri
             startActivity(intent)
         }
-        alertDialogBuilder.setNegativeButton("Cancel"
+        alertDialogBuilder.setNegativeButton(
+            "Cancel"
         ) { _, _ -> Logger.debug("dialogInterface=>", "onClick: Cancelling") }
 
         val dialog = alertDialogBuilder.create()
@@ -74,8 +80,10 @@ open class BaseFragment() : Fragment() {
 //                    showToast("Permission Granted...")
                 } else {
                     // permission denied
-                    setShouldShowStatus(requireContext(),
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    setShouldShowStatus(
+                        requireContext(),
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    )
                     checkUserRequestedDontAskAgain()
                 }
             }

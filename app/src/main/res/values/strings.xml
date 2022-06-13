@@ -71,4 +71,7 @@
     <string name="enter_edt_name">Please enter name</string>
     <string name="pdf_dir">pdf_Files</string>
 
+    <string name="remote_topic">image_to_pdf</string>
+
+
 </resources>

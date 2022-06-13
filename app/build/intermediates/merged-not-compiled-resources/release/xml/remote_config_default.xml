@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>image_to_pdf</key>
+        <value>{
+            "main_native": {
+            "value": 1
+            }
+            }
+        </value>
+    </entry>
+</defaultsMap>

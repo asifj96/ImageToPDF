@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.futuretech.pdfreaderconverter.R
 import com.futuretech.pdfreaderconverter.adapter.RootItemAdapter
 import com.futuretech.pdfreaderconverter.ads.loadNativeAd
-import com.futuretech.pdfreaderconverter.ads.loadPreloadedAd
 import com.futuretech.pdfreaderconverter.databinding.FragmentRootBinding
 import com.futuretech.pdfreaderconverter.extension.*
 import com.futuretech.pdfreaderconverter.model.ImageQueue
@@ -70,6 +69,8 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
         } else {
             mBinding.mCvNativeAd.visibility = View.GONE
         }
+        remoteViewModel.getRemoteConfigInit(requireActivity())
+
     }
 
     private fun setListener() {
@@ -253,27 +254,31 @@ class RootFragment : BaseFragment(), PopupMenu.OnMenuItemClickListener {
 
     private fun loadMainFullNative() {
 
-        if (mainFullNativeAd == null) {
+        if (requireActivity().isNetworkAvailable()) {
 
-            requireActivity().loadNativeAd(
-                adViewNoPermission_one,
-                R.layout.full_native_flexible_ad,
-                getString(R.string.main_native),
-                shimmerLayoutNative,
-                mCvNativeAd
-            ) {
-                mainFullNativeAd = it
-                Logger.debug("Main_Full_Native::=>", mainFullNativeAd.toString())
-            }
+            remoteViewModel.remoteConfig.observe(requireActivity(), fun(remoteConfig) {
+                Logger.debug(
+                    "Main_Full_Native VALUE::=>",
+                    remoteConfig.main_native.value.toString()
+                )
+
+                if (remoteConfig.main_native.value == 1) {
+                    requireActivity().loadNativeAd(
+                        adViewNoPermission_one,
+                        R.layout.full_native_flexible_ad,
+                        getString(R.string.main_native),
+                        shimmerLayoutNative,
+                        mCvNativeAd
+                    ) {
+                        mainFullNativeAd = it
+                        Logger.debug("Main_Full_Native::=>", mainFullNativeAd.toString())
+                    }
+                } else {
+                    mBinding.mCvNativeAd.visibility = View.GONE
+                }
+            })
         } else {
-            requireActivity().loadPreloadedAd(
-                adViewNoPermission_one,
-                R.layout.full_native_flexible_ad,
-                mainFullNativeAd!!,
-                shimmerLayoutNative,
-                mCvNativeAd
-            )
+            mBinding.mCvNativeAd.visibility = View.GONE
         }
     }
-
 }

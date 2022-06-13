@@ -11,8 +11,11 @@
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/drawable/ic_clear_text.xml" value="0.189" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/drawable/ic_pdf_icon.xml" value="0.1115" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/drawable/ic_rate_us_icon.xml" value="0.1455" />
+        <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/drawable/ic_rename_file_icon.xml" value="0.189" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/drawable/ic_share_icon.xml" value="0.1115" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/activity_camera_screen.xml" value="0.21" />
+        <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/activity_edit_image_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/activity_gallery_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/activity_home_files.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/activity_main.xml" value="0.14351851851851852" />
         <entry key="..\:/Users/hp/AndroidProject/ImageToPDF/app/src/main/res/layout/dialog_confirmation.xml" value="0.1574074074074074" />
